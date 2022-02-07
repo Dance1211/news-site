@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getArticles } from "../../utils/api";
-import ArticlePreview from "../ArticlePreview";
+import { getArticles } from "../../../utils/api";
+import ArticlePreview from "../../ArticlePreview";
 import './styles.css';
 
 function Home() {
