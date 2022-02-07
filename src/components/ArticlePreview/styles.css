@@ -60,20 +60,3 @@
   text-align: end;
   grid-area: votes;
 }
-
-.AuthorCard {
-  grid-area: author;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  column-gap: 0.8em;
-  width: max-content;
-}
-
-.AuthorCard__avatar {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid black;
-  object-fit: cover;
-  border-radius: 50%;
-}

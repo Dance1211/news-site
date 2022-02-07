@@ -3,17 +3,15 @@ import { getSingleUser } from "../utils/api";
 
 function useUserById(username) {
   const [user, setUser] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     getSingleUser(username)
       .then((userData) => {
         setUser(() => userData);
-        setIsLoaded(true);
       })
   }, [username]);
 
-  return [user, isLoaded];
+  return [user];
 }
 
 export default useUserById;

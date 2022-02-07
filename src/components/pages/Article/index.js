@@ -25,8 +25,7 @@ function Article() {
   return (
     <main className="Article">
       <Body article={article} />
-      <hr />
-      <Comments author={article?.author} />
+      <Comments article_id={article_id} author={article?.author} />
     </main>
   );
 }

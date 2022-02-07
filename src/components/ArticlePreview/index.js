@@ -6,7 +6,7 @@ import { AuthorCard } from '../AuthorCard';
 
 function ArticlePreview({ article }) {
   const { article_id, title, topic, created_at, votes, comment_count } = article;
-  const [author, isAuthorLoaded] = useUserById(article.author);
+  const [author] = useUserById(article.author);
 
   return (
     <div className="ArticlePreview">
@@ -24,7 +24,7 @@ function ArticlePreview({ article }) {
       <Link to={`/u/${article.author}`}
         className="ArticlePreview__link"
       >
-        {isAuthorLoaded && <AuthorCard author={author} />}
+        {author && <AuthorCard author={author} />}
       </Link>
       <Link to={`/t/${topic}/${article_id}#comments`}
         className="ArticlePreview__link ArticlePreview__comments"

@@ -18,3 +18,8 @@ export const getSingleUser = async (username) => {
   const res = await newsApi.get(`/users/${username}`);
   return res.data.user;
 }
+
+export const getCommentsById = async (article_id) => {
+  const res = await newsApi.get(`/articles/${article_id}/comments`);
+  return res.data.comments;
+}

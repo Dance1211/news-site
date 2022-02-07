@@ -13,4 +13,5 @@
   border: 1px solid black;
   object-fit: cover;
   border-radius: 50%;
+  background-color: gray;
 }

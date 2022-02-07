@@ -1,0 +1,20 @@
+.Comments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+	background-color: white;
+	padding: 1rem 16px;
+	border-radius: 8px;
+	color: #444;
+	border: 1px solid #bbb;
+}
+
+.SingleComment {
+  border-bottom: 1px solid #bbb;
+  padding: 16px 1em;
+}
+
+.SingleComment--author {
+  border: 1px solid orangered;
+  box-sizing: content-box;
+}

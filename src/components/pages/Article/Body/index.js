@@ -6,14 +6,14 @@ import './styles.css';
 
 function Body({ article }) {
   const { title, body, author, created_at, votes } = article;
-  const [authorData, isAuthorLoaded] = useUserById(author);
+  const [authorData] = useUserById(author);
 
   return (
     <article className="ArticleBody">
       <Link to={`/u/${article.author}`}
         className="ArticlePreview__link"
       >
-        {isAuthorLoaded && <AuthorCard author={authorData} />}
+        {authorData && <AuthorCard author={authorData} />}
       </Link>
       <h2 className="ArticleBody__title">{title}</h2>
       <p className="ArticleBody__body">{body}</p>
