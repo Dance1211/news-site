@@ -1,0 +1,6 @@
+.Article {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin: 0 24px;
+}

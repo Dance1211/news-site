@@ -4,6 +4,7 @@ import useArticleById from "../../../hooks/ArticleById";
 import Error from "../../Error";
 import Body from "./Body";
 import Comments from "./Comments";
+import './styles.css';
 
 function Article() {
   const { article_id } = useParams();
@@ -22,7 +23,7 @@ function Article() {
   }
 
   return (
-    <main>
+    <main className="Article">
       <Body article={article} />
       <hr />
       <Comments author={article?.author} />

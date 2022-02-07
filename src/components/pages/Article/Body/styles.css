@@ -1,0 +1,34 @@
+.ArticleBody {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		'author author'
+		'title  title'
+		'body   body'
+		'date   votes';
+	row-gap: 0.5em;
+
+	background-color: white;
+	padding: 1rem 16px;
+	border-radius: 8px;
+	color: #444;
+	border: 1px solid #bbb;
+}
+
+.ArticleBody__author {
+	grid-area: author;
+}
+
+.ArticleBody__body {
+	grid-area: body;
+}
+
+.ArticleBody__title {
+  font-weight: 600;
+	color: black;
+	grid-area: title;
+}
+
+.ArticleBody__date {
+	grid-area: date;
+}

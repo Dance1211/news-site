@@ -3,6 +3,7 @@ import Header from '../Header';
 import Home from '../pages/Home';
 import Article from '../pages/Article';
 import './styles.css';
+import Error from '../Error';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/t/:slug/:article_id" element={<Article />} />
-          <Route path="*" element={<p>404 :(</p>} />
+          <Route path="*" element={<Error/>} />
         </Routes>
       </div>
     </BrowserRouter>

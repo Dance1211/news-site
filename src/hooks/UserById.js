@@ -11,7 +11,7 @@ function useUserById(username) {
         setUser(() => userData);
         setIsLoaded(true);
       })
-  }, [])
+  }, [username]);
 
   return [user, isLoaded];
 }
