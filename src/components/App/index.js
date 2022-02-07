@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Article from '../Article';
 import Header from '../Header';
 import Home from '../Home';
-import './style.css';
+import './styles.css';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/t/:slug/:article_id" element={<Article />} />
           <Route path="*" element={<p>404 :(</p>} />
         </Routes>
       </div>

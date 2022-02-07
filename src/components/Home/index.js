@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../../utils/api";
 import ArticlePreview from "../ArticlePreview";
-import './style.css';
+import './styles.css';
 
 function Home() {
   const [articles, setArticles] = useState([]);
