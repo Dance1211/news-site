@@ -1,9 +1,18 @@
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function Header() {
   return (
-    <header>
-      <h1>JB-NEWS</h1>
+    <header className="Header">
+      <div className="Header__sticky">
+        <Link to={'/'} className="Header__link">
+          <h1 className="Header__title">NC-NEWS</h1>
+        </Link>
+        <button className="Header__navButton">
+          <i style={{ color: "white" }} className="fas fa-bars" />
+        </button>
+      </div>
+      <div className="Header__spacer" />
     </header>
   );
 }
