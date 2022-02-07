@@ -1,25 +1,65 @@
 .ArticlePreview {
-	display: flex;
-	flex-wrap: wrap;
-	background-color: white;
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  'topic    date'
+  'title    title'
+  'author   author'
+  'comments votes';
+  row-gap: 0.5em;
+
 	min-height: 6em;
+	background-color: white;
+  border-radius: 8px;
+  border: 1px solid #bbb;
   padding: 1rem 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+}
+
+.ArticlePreview__topic {
+  grid-area: topic;
+}
+
+.ArticlePreview__date {
+  text-align: end;
+  grid-area: date;
 }
 
 .ArticlePreview__title {
 	font-family: 'Hind Madurai', sans-serif;
-  size: 2em;
+  text-decoration: inherit;
+  width: fit-content;
+  size: 2rem;
+  color: black;
+  grid-area: title;
+}
+
+.ArticlePreview__title:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.ArticlePreview__comments {
+  grid-area: comments;
+}
+
+.ArticlePreview__votes {
+  text-align: end;
+  grid-area: votes;
 }
 
 .AuthorCard {
   display: flex;
   flex-direction: row;
   align-items: center;
+  column-gap: 0.8em;
+  grid-area: author;
 }
 
 .AuthorCard__avatar {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 1px solid black;
   object-fit: cover;
   border-radius: 50%;

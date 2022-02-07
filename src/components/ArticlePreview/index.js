@@ -1,19 +1,22 @@
 import './styles.css';
 import * as dateService from '../../utils/date';
 import useUserById from '../../hooks/UserById';
+import { Link } from 'react-router-dom';
 
 function ArticlePreview({ article }) {
-  const { title, topic, created_at, votes, comment_count } = article;
+  const { article_id, title, topic, created_at, votes, comment_count } = article;
   const [author, isAuthorLoaded] = useUserById(article.author);
 
   return (
     <div className="ArticlePreview">
-      <p>{topic}</p>
-      <p>{dateService.formatDateTime(created_at)}</p>
-      <h3 className='ArticlePreview__title'>{title}</h3>
-      {isAuthorLoaded && <AuthorCard author={author}/>}
-      <p>{comment_count} comment{comment_count !== 1 ? 's' : ''}</p>
-      <p>{votes} vote{votes !== 1 ? 's' : ''}</p>
+      <p className="ArticlePreview__topic">{topic}</p>
+      <p className="ArticlePreview__date">{dateService.formatDateTime(created_at)}</p>
+      <Link to={`/articles/${article_id}`} className="ArticlePreview__title">
+        <h3>{title}</h3>
+      </Link>
+      {isAuthorLoaded && <AuthorCard author={author} />}
+      <p className="ArticlePreview__comments">{comment_count} comment{comment_count !== 1 ? 's' : ''}</p>
+      <p className="ArticlePreview__votes">{votes} vote{votes !== 1 ? 's' : ''}</p>
     </div>
   );
 }
