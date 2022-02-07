@@ -17,6 +17,15 @@
   color: #444;
 }
 
+.ArticlePreview__link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.ArticlePreview__link:hover {
+  text-decoration: underline;
+}
+
 .ArticlePreview__topic {
   grid-area: topic;
 }
@@ -28,7 +37,6 @@
 
 .ArticlePreview__title {
 	font-family: 'Hind Madurai', sans-serif;
-  text-decoration: inherit;
   width: fit-content;
   size: 2rem;
   color: black;
@@ -37,7 +45,11 @@
 
 .ArticlePreview__title:hover {
   color: #333;
-  text-decoration: underline;
+}
+
+.ArticlePreview__author {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 .ArticlePreview__comments {
@@ -50,11 +62,12 @@
 }
 
 .AuthorCard {
+  grid-area: author;
   display: flex;
   flex-direction: row;
   align-items: center;
   column-gap: 0.8em;
-  grid-area: author;
+  width: max-content;
 }
 
 .AuthorCard__avatar {

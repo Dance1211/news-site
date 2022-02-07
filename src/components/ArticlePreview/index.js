@@ -9,13 +9,27 @@ function ArticlePreview({ article }) {
 
   return (
     <div className="ArticlePreview">
-      <p className="ArticlePreview__topic">{topic}</p>
+      <Link to={`/t/${topic}`}
+        className="ArticlePreview__link ArticlePreview__topic"
+      >
+        <p>{topic}</p>
+      </Link>
       <p className="ArticlePreview__date">{dateService.formatDateTime(created_at)}</p>
-      <Link to={`/articles/${article_id}`} className="ArticlePreview__title">
+      <Link to={`/t/${topic}/${article_id}`}
+        className="ArticlePreview__link ArticlePreview__title"
+      >
         <h3>{title}</h3>
       </Link>
-      {isAuthorLoaded && <AuthorCard author={author} />}
-      <p className="ArticlePreview__comments">{comment_count} comment{comment_count !== 1 ? 's' : ''}</p>
+      <Link to={`/u/${article.author}`}
+        className="ArticlePreview__link"
+      >
+        {isAuthorLoaded && <AuthorCard author={author} />}
+      </Link>
+      <Link to={`/t/${topic}/${article_id}#comments`}
+        className="ArticlePreview__link ArticlePreview__comments"
+      >
+        <p>{comment_count} comment{comment_count !== 1 ? 's' : ''}</p>
+      </Link>
       <p className="ArticlePreview__votes">{votes} vote{votes !== 1 ? 's' : ''}</p>
     </div>
   );
