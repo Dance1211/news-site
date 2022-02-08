@@ -24,7 +24,7 @@ function ArticlePreview({ article }) {
       <Link to={`/u/${article.author}`}
         className="ArticlePreview__link"
       >
-        {author && <AuthorCard author={author} />}
+      <AuthorCard author={author} />
       </Link>
       <Link to={`/t/${topic}/${article_id}#comments`}
         className="ArticlePreview__link ArticlePreview__comments"

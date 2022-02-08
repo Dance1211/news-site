@@ -13,7 +13,7 @@ function Body({ article }) {
       <Link to={`/u/${article.author}`}
         className="ArticlePreview__link"
       >
-        {authorData && <AuthorCard author={authorData} />}
+      <AuthorCard author={authorData} />
       </Link>
       <h2 className="ArticleBody__title">{title}</h2>
       <p className="ArticleBody__body">{body}</p>

@@ -1,7 +1,11 @@
-function Nav() {
+import './styles.css';
+
+function Nav({isNavOpen}) {
   return (
-    <nav>
-      <p>##LINKS HERE##</p>
+    <nav className={`Nav ${isNavOpen && "Nav--open"}`}>
+      <div className="Nav__contents">
+        ##NAV CONTENTS##
+      </div>
     </nav>
   );
 }

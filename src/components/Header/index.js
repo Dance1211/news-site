@@ -1,17 +1,15 @@
-import { Link } from 'react-router-dom';
+import useToggle from '../../hooks/Toggle';
+import { HeaderSticky } from './HeaderSticky';
+import Nav from './Nav';
 import './styles.css';
 
 function Header() {
+  const [isNavOpen, toggleIsNavOpen] = useToggle();
+
   return (
     <header className="Header">
-      <div className="Header__sticky">
-        <Link to={'/'} className="Header__link">
-          <h1 className="Header__title">NC-NEWS</h1>
-        </Link>
-        <button className="Header__navButton">
-          <i style={{ color: "white" }} className="fas fa-bars" />
-        </button>
-      </div>
+      <HeaderSticky toggleIsNavOpen={toggleIsNavOpen} />
+      <Nav isNavOpen={isNavOpen} />
       <div className="Header__spacer" />
     </header>
   );
