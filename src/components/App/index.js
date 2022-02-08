@@ -8,6 +8,7 @@ import Error from '../Error';
 import Footer from '../Footer';
 import './styles.css';
 import { useState } from 'react';
+import Topic from '../pages/Topic';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,6 +20,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/t/:slug" element={<Topic />} />
             <Route path="/t/:slug/:article_id" element={<Article />} />
             <Route path="*" element={<Error />} />
           </Routes>
