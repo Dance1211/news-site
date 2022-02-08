@@ -8,7 +8,7 @@ import './styles.css';
 function Comments({ author, article_id }) {
   const [comments] = useArticleComments(article_id)
   return (
-    <section id="Comments" className="Comments">
+    <section id="comments" className="Comments">
       <h2>Comments ({comments.length})</h2>
       {comments.map((commentData) => {
         return (
@@ -28,7 +28,7 @@ function SingleComment({ commentData, isArticleAuthor }) {
   const [authorData] = useUserById(author);
   return (
     <article className={`SingleComment ${isArticleAuthor && "SingleComment--author"}`}>
-      {authorData && <AuthorCard author={authorData} />}
+      <AuthorCard author={authorData} />
       <p>{dateService.formatDateTime(created_at)}</p>
       <p>{body}</p>
       <p>{votes}</p>

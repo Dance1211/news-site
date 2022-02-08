@@ -14,7 +14,10 @@
   padding: 16px 1em;
 }
 
-.SingleComment--author {
-  border: 1px solid orangered;
-  box-sizing: content-box;
+.SingleComment--author .AuthorCard__name {
+  color: orangered;
+}
+
+.SingleComment--author .AuthorCard__avatar {
+  border-color: orangered;
 }
