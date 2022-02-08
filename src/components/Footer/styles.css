@@ -1,0 +1,25 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: .8rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 24px 1em;
+}
+
+.Footer__siteName {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.Footer__link {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.Footer__copyright {
+  color: #888;
+}
