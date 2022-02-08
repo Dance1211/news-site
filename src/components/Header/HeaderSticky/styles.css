@@ -1,0 +1,32 @@
+.HeaderSticky {
+  position:fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3.5rem;
+  background-color: black;
+  padding: 0 24px;
+  color: white;
+}
+
+.HeaderSticky__link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.HeaderSticky__title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.HeaderSticky__navButton {
+  background-color: transparent;
+  border-style: none;
+  font-size: 2rem;
+  margin-top: 0.3rem;
+  cursor: pointer;
+}
