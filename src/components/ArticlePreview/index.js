@@ -3,6 +3,8 @@ import * as dateService from '../../utils/date';
 import useUserById from '../../hooks/UserById';
 import { Link } from 'react-router-dom';
 import { AuthorCard } from '../AuthorCard';
+import Vote from '../Vote';
+import { voteSingleArticle } from '../../utils/api';
 
 function ArticlePreview({ article }) {
   const { article_id, title, topic, created_at, votes, comment_count } = article;
@@ -24,14 +26,15 @@ function ArticlePreview({ article }) {
       <Link to={`/u/${article.author}`}
         className="ArticlePreview__link ArticlePreview__author"
       >
-      <AuthorCard author={author} />
+        <AuthorCard author={author} />
       </Link>
       <Link to={`/t/${topic}/${article_id}#comments`}
         className="ArticlePreview__link ArticlePreview__comments"
       >
         <p>{comment_count} comment{comment_count !== 1 ? 's' : ''}</p>
       </Link>
-      <p className="ArticlePreview__votes">{votes} vote{votes !== 1 ? 's' : ''}</p>
+
+      <Vote voteNum={votes} onVotePress={() => voteSingleArticle(article_id)} />
     </div>
   );
 }
