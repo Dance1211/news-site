@@ -22,7 +22,7 @@ function ArticlePreview({ article }) {
         <h3>{title}</h3>
       </Link>
       <Link to={`/u/${article.author}`}
-        className="ArticlePreview__link"
+        className="ArticlePreview__link ArticlePreview__author"
       >
       <AuthorCard author={author} />
       </Link>

@@ -7,14 +7,6 @@
   'author   author'
   'comments votes';
   row-gap: 0.5em;
-
-	min-height: 6em;
-	background-color: white;
-  border-radius: 8px;
-  border: 1px solid #bbb;
-  padding: 1rem 16px;
-  font-family: 'Montserrat', sans-serif;
-  color: #444;
 }
 
 .ArticlePreview__link {
@@ -31,6 +23,7 @@
 }
 
 .ArticlePreview__date {
+  white-space: pre;
   text-align: end;
   grid-area: date;
 }
@@ -48,6 +41,7 @@
 }
 
 .ArticlePreview__author {
+  grid-area: author;
   text-decoration: inherit;
   color: inherit;
 }
