@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useArticleById from "../../../hooks/ArticleById";
 import Error from "../../Error";
+import TopLayerBody from "../../TopLayerBody";
 import Body from "./Body";
 import Comments from "./Comments";
 import './styles.css';
@@ -24,8 +25,12 @@ function Article() {
 
   return (
     <main className="Article">
-      <Body article={article} />
-      <Comments article_id={article_id} author={article?.author} />
+      <TopLayerBody>
+        <Body article={article} />
+      </TopLayerBody>
+      <TopLayerBody>
+        <Comments article_id={article_id} author={article?.author} />
+      </TopLayerBody>
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "../../../utils/api";
+import TopLayerBody from "../../TopLayerBody";
 import ArticlePreview from "../../ArticlePreview";
 import './styles.css';
 function Topic() {
@@ -25,7 +26,11 @@ function Topic() {
       <h2>{slug}</h2>
       <section className="Home_articles">
         {articles.map((article, index) => {
-          return <ArticlePreview key={index} article={article} />
+          return (
+            <TopLayerBody>
+              <ArticlePreview key={index} article={article} />
+            </TopLayerBody>
+          )
         })}
       </section>
     </main>

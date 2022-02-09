@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../../../utils/api";
 import ArticlePreview from "../../ArticlePreview";
+import TopLayerBody from "../../TopLayerBody";
 import './styles.css';
 
 function Home() {
@@ -17,7 +18,11 @@ function Home() {
     <main>
       <section className="Home_articles">
         {articles.map((article, index) => {
-          return <ArticlePreview key={index} article={article} />
+          return (
+            <TopLayerBody>
+              <ArticlePreview key={index} article={article} />
+            </TopLayerBody>
+          )
         })}
       </section>
     </main>
