@@ -6,7 +6,7 @@ function Footer() {
     <footer className="Footer">
       <h2 className="Footer__siteName">NC-NEWS</h2>
       <Links/>
-      <p className="Footer__copyright">© 2022 Clown Boner McFart </p>
+      <p className="Footer__copyright">© 2022 Joshua Banister </p>
     </footer>
   );
 }

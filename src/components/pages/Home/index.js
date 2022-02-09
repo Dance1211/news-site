@@ -17,10 +17,10 @@ function Home() {
   return (
     <main>
       <section className="Home_articles">
-        {articles.map((article, index) => {
+        {articles.map((article) => {
           return (
-            <TopLayerBody>
-              <ArticlePreview key={index} article={article} />
+            <TopLayerBody key={article.article_id}>
+              <ArticlePreview article={article} />
             </TopLayerBody>
           )
         })}
