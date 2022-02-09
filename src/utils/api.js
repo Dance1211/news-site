@@ -29,6 +29,11 @@ export const getCommentsById = async (article_id) => {
   return res.data.comments;
 }
 
+export const postComment = async (article_id, username, body) => {
+  const res = await newsApi.post(`/articles/${article_id}/comments`, {username, body});
+  return res.data.comment;
+}
+
 export const voteCommentById = async (comment_id, amount = 1) => {
   const res = await newsApi.patch(`/comments/${comment_id}`, { inc_votes: amount });
   console.log(res.data.comment);
