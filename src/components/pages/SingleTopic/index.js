@@ -4,6 +4,7 @@ import { getArticles } from "../../../utils/api";
 import TopLayerBody from "../../TopLayerBody";
 import ArticlePreview from "../../ArticlePreview";
 import './styles.css';
+
 function Topic() {
   const { slug } = useParams();
   const [articles, setArticles] = useState([]);
@@ -24,7 +25,7 @@ function Topic() {
   return (
     <main>
       <h2>{slug}</h2>
-      <section className="Home_articles">
+      <section className="SingleTopic__articles">
         {articles.map((article, index) => {
           return (
             <TopLayerBody>

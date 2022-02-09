@@ -1,9 +1,12 @@
+import TopLayerBody from '../../TopLayerBody';
 import './styles.css';
 
 function Topics() {
   return (
     <main>
-      <h1>Topics</h1>
+      <TopLayerBody>
+        <h1>Topics</h1>
+      </TopLayerBody>
     </main>
   );
 }
