@@ -1,0 +1,18 @@
+.PostComment {
+  color: red;
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.PostComment__commentBodyContainer {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+.PostComment__commentBody {
+  box-sizing: border-box;
+  resize: vertical;
+  width: 100%;
+}

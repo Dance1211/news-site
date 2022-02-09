@@ -13,7 +13,7 @@ function useArticleComments(article_id) {
       })
   }, [article_id]);
 
-  return [comments];
+  return [comments, setComments];
 }
 
 export default useArticleComments;
