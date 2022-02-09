@@ -3,6 +3,8 @@ import useArticleComments from "../../../../hooks/CommentsByArticle";
 import useUserById from "../../../../hooks/UserById";
 import { AuthorCard } from "../../../AuthorCard";
 import './styles.css';
+import Vote from "../../../Vote";
+import { voteCommentById } from "../../../../utils/api";
 
 
 function Comments({ author, article_id }) {
@@ -24,14 +26,18 @@ function Comments({ author, article_id }) {
 }
 
 function SingleComment({ commentData, isArticleAuthor }) {
-  const { author, body, created_at, votes } = commentData;
+  const { comment_id, author, body, created_at, votes } = commentData;
   const [authorData] = useUserById(author);
   return (
     <article className={`SingleComment ${isArticleAuthor && "SingleComment--author"}`}>
       <AuthorCard author={authorData} />
       <p>{dateService.formatDateTime(created_at)}</p>
       <p>{body}</p>
-      <p>{votes}</p>
+      <Vote
+        voteNum={votes}
+        onVoteUpPress={() => voteCommentById(comment_id, 1)}
+        onVoteDownPress={() => voteCommentById(comment_id, -1)}
+      />
     </article>
   );
 }

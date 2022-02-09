@@ -5,18 +5,17 @@ const newsApi = axios.create({
 })
 
 export const getArticles = async (queries) => {
-  const res = await newsApi.get('/articles', {params: queries});
+  const res = await newsApi.get('/articles', { params: queries });
   return res.data.articles;
 }
 
-export const getSingleArticle = async(article_id) => {
+export const getSingleArticle = async (article_id) => {
   const res = await newsApi.get(`/articles/${article_id}`);
   return res.data.article;
 }
 
-export const voteSingleArticle = async(article_id) => {
-  const res = await newsApi.patch(`/articles/${article_id}`, {inc_votes: 1});
-  console.log(res.data.article)
+export const voteSingleArticle = async (article_id, amount) => {
+  const res = await newsApi.patch(`/articles/${article_id}`, { inc_votes: amount });
   return res.data.article;
 }
 
@@ -28,4 +27,10 @@ export const getSingleUser = async (username) => {
 export const getCommentsById = async (article_id) => {
   const res = await newsApi.get(`/articles/${article_id}/comments`);
   return res.data.comments;
+}
+
+export const voteCommentById = async (comment_id, amount = 1) => {
+  const res = await newsApi.patch(`/comments/${comment_id}`, { inc_votes: amount });
+  console.log(res.data.comment);
+  return res.data.comment;
 }

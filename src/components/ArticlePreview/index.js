@@ -34,7 +34,13 @@ function ArticlePreview({ article }) {
         <p>{comment_count} comment{comment_count !== 1 ? 's' : ''}</p>
       </Link>
 
-      <Vote voteNum={votes} onVotePress={() => voteSingleArticle(article_id)} />
+      <div className="ArticlePreview__votes">
+        <Vote
+          voteNum={votes}
+          onVoteUpPress={() => voteSingleArticle(article_id, 1)}
+          onVoteDownPress={() => voteSingleArticle(article_id, -1)}
+        />
+      </div>
     </div>
   );
 }

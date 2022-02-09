@@ -26,3 +26,9 @@
 .ArticleBody__date {
 	grid-area: date;
 }
+
+.ArticleBody__votes {
+	text-align: end;
+	grid-area: votes;
+	margin-left: auto;
+}

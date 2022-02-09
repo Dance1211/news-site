@@ -1,29 +1,29 @@
 import { useState, useEffect, useRef } from 'react';
 import './styles.css';
 
-function Vote({ voteNum, onVotePress }) {
+function Vote({ voteNum, onVoteUpPress, onVoteDownPress }) {
   const [currVotes, setCurrVotes] = useState(voteNum);
-  const isMounted = useRef(false);
 
-  useEffect(() => {
-    if (isMounted.current) {
-      onVotePress()
-        .catch((err) => {
-          console.log(err.response.data);
-        })
-    } else {
-      isMounted.current = true;
-    }
-  }, [currVotes])
-
-  const handleVote = () => {
+  const handleUpVote = () => {
     setCurrVotes((tempVotes) => tempVotes + 1);
+    onVoteUpPress();
+  }
+
+  const handleDownVote = () => {
+    setCurrVotes((tempVotes) => tempVotes - 1);
+    onVoteDownPress();
   }
 
   return (
-    <button onClick={handleVote}>
-      <p>{currVotes}</p>
-    </button>
+    <div className="VoteButton">
+      {onVoteUpPress && <button className="VoteButton__button" onClick={handleUpVote}>
+        <i className="VoteButton__icon fas fa-angle-up" />
+      </button>}
+      <p className="VoteButton__votes">{currVotes}</p>
+      {onVoteDownPress && <button className="VoteButton__button" onClick={handleDownVote}>
+        <i className="VoteButton__icon fas fa-angle-down" />
+      </button>}
+    </div>
   );
 }
 

@@ -1,0 +1,39 @@
+.VoteButton {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  width: fit-content;
+  border: 1px solid #bbb;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.VoteButton__button {
+  border-style: none;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.VoteButton__icon {
+  display: block;
+  background-color: #bbb;
+  color: white;
+  height: 1.5rem;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: inherit;
+}
+
+.VoteButton__votes {
+  background-color: white;
+  color: #bbb;
+  font-weight: 600;
+  min-width: 3rem;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  line-height: 1.5rem;
+  text-align: inherit;
+}
+
