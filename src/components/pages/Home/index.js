@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getArticles } from "../../../utils/api";
-import ArticlePreview from "../../ArticlePreview";
-import TopLayerBody from "../../TopLayerBody";
+import { getArticles } from "@utils/api";
+import ArticlePreview from "@components/ArticlePreview";
+import TopLayerBody from "@components/TopLayerBody";
 import './styles.css';
 
 function Home() {

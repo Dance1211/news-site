@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticles } from "../../../utils/api";
-import TopLayerBody from "../../TopLayerBody";
-import ArticlePreview from "../../ArticlePreview";
+import { getArticles } from "@utils/api";
+import TopLayerBody from "@components/TopLayerBody";
+import ArticlePreview from "@components/ArticlePreview";
 import './styles.css';
 
 function Topic() {

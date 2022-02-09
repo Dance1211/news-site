@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import UserContext from '../../../../../context/User';
+import UserContext from '@context/User';
 import './styles.css';
 
 function PostComment() {
@@ -8,7 +8,7 @@ function PostComment() {
   return (
     <section className="PostComment">
       <form>
-        <label>
+        <label className='postComment__'>
           <textarea className="PostComment__commentBody"></textarea>
 
         </label>

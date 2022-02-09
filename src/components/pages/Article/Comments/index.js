@@ -1,11 +1,11 @@
-import * as dateService from "../../../../utils/date";
-import useArticleComments from "../../../../hooks/CommentsByArticle";
-import useUserById from "../../../../hooks/UserById";
-import { AuthorCard } from "../../../AuthorCard";
-import './styles.css';
-import Vote from "../../../Vote";
-import { voteCommentById } from "../../../../utils/api";
+import * as dateService from "@utils/date";
+import { voteCommentById } from "@utils/api";
+import Vote from "@components/Vote";
+import useUserById from "@hooks/UserById";
+import { AuthorCard } from "@components/AuthorCard";
+import useArticleComments from "@hooks/CommentsByArticle";
 import PostComment from "./PostComment";
+import './styles.css';
 
 
 function Comments({ author, article_id }) {

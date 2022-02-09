@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import * as dateService from '../../../../utils/date';
-import useUserById from '../../../../hooks/UserById';
-import { voteSingleArticle } from '../../../../utils/api';
-import { AuthorCard } from '../../../AuthorCard';
-import Votes from '../../../Vote';
+import * as dateService from '@utils/date';
+import { voteSingleArticle } from '@utils/api';
+import useUserById from '@hooks/UserById';
+import { AuthorCard } from '@components/AuthorCard';
+import Votes from '@components/Vote';
 import './styles.css';
 
 function Body({ article }) {

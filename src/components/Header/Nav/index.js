@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { AuthorCard } from '../../AuthorCard';
+import { AuthorCard } from '@components/AuthorCard';
 
-import UserContext from '../../../context/User';
+import UserContext from '@context/User';
 
 import './styles.css';
 

@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
-import UserContext from '../../context/User';
+import UserContext from '@context/User';
 
-import Header from '../Header';
-import Home from '../pages/Home';
-import Topics from '../pages/Topics';
-import SingleTopic from '../pages/SingleTopic';
-import Article from '../pages/Article';
-import Error from '../Error';
-import Footer from '../Footer';
+import Header from '@components/Header';
+import Home from '@components/pages/Home';
+import Topics from '@components/pages/Topics';
+import SingleTopic from '@components/pages/SingleTopic';
+import Article from '@components/pages/Article';
+import Error from '@components/Error';
+import Footer from '@components/Footer';
 import './styles.css';
 
 function App() {

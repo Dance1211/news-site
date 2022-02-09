@@ -1,4 +1,4 @@
-import TopLayerBody from '../../TopLayerBody';
+import TopLayerBody from '@components/TopLayerBody';
 import './styles.css';
 
 function Topics() {
