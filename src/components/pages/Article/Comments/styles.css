@@ -11,6 +11,7 @@
   'body body'
   'date vote'
   '. delete';
+	grid-template-columns: 1fr 1fr;
   row-gap: 0.7em;
 	border-bottom: 1px solid #bbb;
 	padding: 16px 1em;
@@ -32,8 +33,10 @@
 	grid-area: body;
 }
 
-.SingleComment .VoteButton {
-  margin-left: auto;
+.SingleComment__vote {
+  display: flex;
+	align-items: center;
+	justify-content: end;
 }
 
 .SingleComment__delete {

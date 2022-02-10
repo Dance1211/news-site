@@ -48,11 +48,13 @@ function SingleComment({ setComments, commentData, isArticleAuthor, isUser }) {
       <AuthorCard author={authorData} />
       <p className="SingleComment__date">{dateService.formatDateTime(created_at)}</p>
       <p className="SingleComment__body">{body}</p>
-      <Vote
-        voteNum={votes}
-        onVoteUpPress={() => voteCommentById(comment_id, 1)}
-        onVoteDownPress={() => voteCommentById(comment_id, -1)}
-      />
+      <div className="SingleComment__vote">
+        <Vote
+          voteNum={votes}
+          onVoteUpPress={() => voteCommentById(comment_id, 1)}
+          onVoteDownPress={() => voteCommentById(comment_id, -1)}
+        />
+      </div>
       {isUser && <button className="SingleComment__delete" onClick={handleDeleteComment}>Delete</button>}
     </article>
   );
