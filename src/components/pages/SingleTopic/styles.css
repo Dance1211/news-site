@@ -1,6 +1,20 @@
-.SingleTopic__articles {
+.SingleTopic {
+  padding: 0 24px;
+}
+
+.SingleTopic .TopLayerBody {
   display: flex;
   flex-direction: column;
-  row-gap: 1em;
-  margin: 0 24px;
+  row-gap: 2rem;
+}
+
+.SingleTopic__heading {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.SingleTopic .SelectPage {
+  align-self: center;
 }

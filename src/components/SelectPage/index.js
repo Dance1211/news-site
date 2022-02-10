@@ -1,13 +1,15 @@
-import { useState } from 'react';
 import './styles.css'
 
-function SelectPage({ page, setPage }) {
-
-  const [isLoading, setIsLoading] = useState(false);
+function SelectPage({ page, setPage, isArticlesLoading}) {
 
   const handlePageChange = (changePageNum) => {
     return () => {
-      setPage((currPage) => currPage + changePageNum);
+      if (isArticlesLoading) return;
+      setPage((currPage) => {
+        const newPage = currPage + changePageNum;
+        if (newPage < 1) return 1;
+        return newPage;
+      });
     }
   }
 

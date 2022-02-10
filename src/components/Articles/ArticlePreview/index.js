@@ -1,10 +1,10 @@
-import './styles.css';
-import * as dateService from '@utils/date';
-import useUserById from '@hooks/UserById';
 import { Link } from 'react-router-dom';
+import * as dateService from '@utils/date';
+import { voteSingleArticle } from '@utils/api';
+import useUserById from '@hooks/UserById';
 import { AuthorCard } from '@components/AuthorCard';
 import Vote from '@components/Vote';
-import { voteSingleArticle } from '@utils/api';
+import './styles.css';
 
 function ArticlePreview({ article }) {
   const { article_id, title, topic, created_at, votes, comment_count } = article;

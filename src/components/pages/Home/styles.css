@@ -1,5 +1,19 @@
 .Home {
+  padding: 0 24px;
+}
+
+.Home .TopLayerBody {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+}
+
+.Home__heading {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.Home .SelectPage {
+  align-self: center;
 }
