@@ -28,8 +28,8 @@ function Home() {
     <main className="Home">
       <TopLayerBody>
         <h2 className="Home__heading">Latest Articles</h2>
-        <Articles articles={articles} setArticles={setArticles} />
-        <SelectPage page={page} setPage={setPage} isArticlesLoading={false}/>
+        <Articles articles={articles} setArticles={setArticles} isLoading={isLoading}/>
+        <SelectPage page={page} setPage={setPage} isArticlesLoading={isLoading}/>
       </TopLayerBody>
     </main>
   );

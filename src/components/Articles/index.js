@@ -1,9 +1,9 @@
 import ArticlePreview from './ArticlePreview';
 import './styles.css';
 
-function Articles({ articles, setArticles }) {
+function Articles({ articles, setArticles, isLoading = false }) {
   return (
-    <section className="Articles">
+    <section className={`Articles${isLoading ? " translucent" : ""}`}>
       {articles.map((article, index) => {
         return (
           <article key={article.article_id} className="Articles__container">
@@ -11,7 +11,7 @@ function Articles({ articles, setArticles }) {
               article={article}
               setArticles={setArticles}
               index={index}
-            />
+              />
           </article>
         )
       })}

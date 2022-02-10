@@ -40,6 +40,7 @@ function Topic() {
         <Articles
           articles={articles}
           setArticles={setArticles}
+          isLoading={isLoading}
         />
         <SelectPage page={page} setPage={setPage} isArticlesLoading={isLoading} />
       </TopLayerBody>
