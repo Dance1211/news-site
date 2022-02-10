@@ -1,0 +1,35 @@
+.SelectPage {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  font-size: 1em;
+  background-color: white;
+  border: 1px solid #bbb;
+}
+
+.SelectPage__prev {
+  order: 1;
+}
+
+.SelectPage__currentPage {
+  order: 2;
+  font-weight: 600;
+  color: #bbb;
+}
+
+.SelectPage__next {
+  order: 3;
+}
+
+.SelectPage__button {
+  border-style: none;
+  background-color: #bbb;
+  color: white;
+  padding: 0.2rem;
+  width: 1.6rem;
+  cursor: pointer;
+}

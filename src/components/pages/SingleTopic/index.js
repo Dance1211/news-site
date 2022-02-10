@@ -28,7 +28,7 @@ function Topic() {
       <section className="SingleTopic__articles">
         {articles.map((article, index) => {
           return (
-            <TopLayerBody>
+            <TopLayerBody key={article.article_id}>
               <ArticlePreview key={index} article={article} />
             </TopLayerBody>
           )
