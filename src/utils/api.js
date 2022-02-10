@@ -39,3 +39,8 @@ export const voteCommentById = async (comment_id, amount = 1) => {
   console.log(res.data.comment);
   return res.data.comment;
 }
+
+export const deleteComment = async (comment_id) => {
+  const res = await newsApi.delete(`/comments/${comment_id}`);
+  return true;
+}

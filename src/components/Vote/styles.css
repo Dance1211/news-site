@@ -1,4 +1,5 @@
 .VoteButton {
+  grid-area: vote;
   display: flex;
   box-sizing: border-box;
   flex-direction: row;

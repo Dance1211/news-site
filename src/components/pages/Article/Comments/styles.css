@@ -1,18 +1,41 @@
 .Comments {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.5rem;
 }
 
 .SingleComment {
-  border-bottom: 1px solid #bbb;
-  padding: 16px 1em;
+  display: grid;
+	grid-template-areas:
+  'author author'
+  'body body'
+  'date vote'
+  '. delete';
+  row-gap: 0.7em;
+	border-bottom: 1px solid #bbb;
+	padding: 16px 1em;
 }
 
-.SingleComment--author .AuthorCard__name {
-  color: orangered;
+.SingleComment--isAuthor .AuthorCard__name {
+	color: orangered;
 }
 
-.SingleComment--author .AuthorCard__avatar {
-  border-color: orangered;
+.SingleComment--isAuthor .AuthorCard__avatar {
+	border-color: orangered;
+}
+
+.SingleComment__date {
+	grid-area: date;
+}
+
+.SingleComment__body {
+	grid-area: body;
+}
+
+.SingleComment .VoteButton {
+  margin-left: auto;
+}
+
+.SingleComment__delete {
+  grid-area: delete;
 }
