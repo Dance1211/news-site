@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "@utils/api";
-import TopLayerBody from "@components/TopLayerBody";
-import ArticlePreview from "@components/ArticlePreview";
+import Articles from "@components/Articles";
 import './styles.css';
 
 function Topic() {
@@ -25,15 +24,7 @@ function Topic() {
   return (
     <main>
       <h2>{slug}</h2>
-      <section className="SingleTopic__articles">
-        {articles.map((article, index) => {
-          return (
-            <TopLayerBody key={article.article_id}>
-              <ArticlePreview key={index} article={article} />
-            </TopLayerBody>
-          )
-        })}
-      </section>
+      <Articles articles={articles} setArticles={setArticles}/>
     </main>
   );
 }

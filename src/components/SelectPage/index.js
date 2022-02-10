@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './styles.css'
 
 function SelectPage({ page, setPage }) {
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handlePageChange = (changePageNum) => {
     return () => {

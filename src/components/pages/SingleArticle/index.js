@@ -7,7 +7,7 @@ import Body from "./Body";
 import Comments from "./Comments";
 import './styles.css';
 
-function Article() {
+function SingleArticle() {
   const { article_id } = useParams();
   const [article, loadingError] = useArticleById(article_id);
 
@@ -35,4 +35,4 @@ function Article() {
   );
 }
 
-export default Article;
+export default SingleArticle;

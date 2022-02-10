@@ -7,7 +7,7 @@ import Header from '@components/Header';
 import Home from '@components/pages/Home';
 import Topics from '@components/pages/Topics';
 import SingleTopic from '@components/pages/SingleTopic';
-import Article from '@components/pages/Article';
+import SingleArticle from '@components/pages/SingleArticle';
 import Error from '@components/Error';
 import Footer from '@components/Footer';
 import './styles.css';
@@ -30,7 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/t" element={<Topics />} />
             <Route path="/t/:slug" element={<SingleTopic />} />
-            <Route path="/t/:slug/:article_id" element={<Article />} />
+            <Route path="/t/:slug/:article_id" element={<SingleArticle />} />
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
