@@ -36,11 +36,10 @@ export const postComment = async (article_id, username, body) => {
 
 export const voteCommentById = async (comment_id, amount = 1) => {
   const res = await newsApi.patch(`/comments/${comment_id}`, { inc_votes: amount });
-  console.log(res.data.comment);
   return res.data.comment;
 }
 
 export const deleteComment = async (comment_id) => {
-  const res = await newsApi.delete(`/comments/${comment_id}`);
+  await newsApi.delete(`/comments/${comment_id}`);
   return true;
 }
