@@ -5,7 +5,7 @@ export function AuthorCard(props) {
     return (
       <div className="AuthorCard">
         <div className="AuthorCard__avatar" />
-        <h4 className="AuthorCard__blank"></h4>
+        <div className="AuthorCard__blank" />
       </div>
     )
   }

@@ -6,22 +6,27 @@ import './styles.css';
 function PostComment({ article_id, setComments }) {
   const { user } = useContext(UserContext);
   const [body, setBody] = useState("");
-  const { status, setStatus } = useState("");
+  const [status, setStatus] = useState(null);
 
   const handleBody = (event) => {
     setBody(() => event.target.value);
+    setStatus(() => null)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    postComment(article_id, user.username, body)
-      .then((newComment) => {
-        setComments((currComments) => [newComment, ...currComments]);
-        setBody(() => "");
-      })
-      .catch((err) => {
-        setStatus(() => "Unable to submit");
-      })
+    if (!body) {
+      setStatus(() => "Cannot send a blank comment!")
+    } else {
+      postComment(article_id, user.username, body)
+        .then((newComment) => {
+          setComments((currComments) => [newComment, ...currComments]);
+          setBody(() => "");
+        })
+        .catch((err) => {
+          setStatus(() => "Unable to submit");
+        })
+    }
   }
 
   return (
@@ -32,9 +37,11 @@ function PostComment({ article_id, setComments }) {
             className="PostComment__commentBody"
             value={body}
             onChange={handleBody}
+            required
           />
         </label>
         <input type="submit" />
+        <p>{status}</p>
       </form>
     </section>
   );
