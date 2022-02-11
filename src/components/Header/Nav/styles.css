@@ -18,8 +18,17 @@
 
 .Nav__contents {
   position: absolute;
+  overflow: hidden;
   left: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
   font-size: 1.5rem;
   top: 1rem;
   white-space: pre;
+}
+
+.Nav__contents a {
+  color: inherit;
 }
