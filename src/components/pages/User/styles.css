@@ -1,0 +1,11 @@
+.User {
+  padding: 0 24px;
+}
+
+.User__avatar {
+  width: min(100%, 425px);
+}
+
+.User__name {
+  font-weight: 400;
+}

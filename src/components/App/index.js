@@ -11,6 +11,7 @@ import SingleArticle from '@components/pages/SingleArticle';
 import Error from '@components/Error';
 import Footer from '@components/Footer';
 import './styles.css';
+import User from '../pages/User';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/t" element={<Topics />} />
             <Route path="/t/:slug" element={<SingleTopic />} />
             <Route path="/t/:slug/:article_id" element={<SingleArticle />} />
+            <Route path="/u/:username" element={<User />} />
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
