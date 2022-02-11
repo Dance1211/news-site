@@ -5,6 +5,7 @@ import UserContext from '@context/User';
 
 import './styles.css';
 import { Link } from 'react-router-dom';
+import useTopics from '@hooks/Topics';
 
 function Nav({ isNavOpen }) {
   const { user } = useContext(UserContext)
@@ -14,6 +15,7 @@ function Nav({ isNavOpen }) {
         <AuthorCard author={user} />
         <hr />
         <NavLinks username={user.username} />
+        <TopicLinks />
       </div>
     </nav>
   );
@@ -22,7 +24,7 @@ function Nav({ isNavOpen }) {
 function NavLinks({ username }) {
   return (
     <section>
-      <p>Links</p>
+      <h2>Links</h2>
       <ul>
         <li>
           <Link to="/">- Home</Link>
@@ -30,6 +32,26 @@ function NavLinks({ username }) {
         <li>
           <Link to={`/u/${username}`}>- Profile</Link>
         </li>
+      </ul>
+    </section>
+  )
+}
+
+function TopicLinks() {
+
+  const topics = useTopics();
+
+  return (
+    <section>
+      <h2>Topics</h2>
+      <ul>
+        {topics.map(({ slug }) => {
+          return (
+            <li>
+              <Link to={`/t/${slug}`}>{`- ${slug}`}</Link>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )

@@ -19,6 +19,11 @@ export const voteSingleArticle = async (article_id, amount) => {
   return res.data.article;
 }
 
+export const getTopics = async () => {
+  const res = await newsApi.get('/topics');
+  return res.data.topics;
+}
+
 export const getSingleUser = async (username) => {
   const res = await newsApi.get(`/users/${username}`);
   return res.data.user;
