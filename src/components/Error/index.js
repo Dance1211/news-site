@@ -1,8 +1,9 @@
 import TopLayerBody from '@components/TopLayerBody';
+import './styles.css';
 
-function Error({ status, statusText, msg }) {
+function Error({ status = 404, statusText = "Page not found", msg = "Cannot find the requested page" }) {
   return (
-    <main>
+    <main className="Error">
       <TopLayerBody>
 
         <h1>{status} {statusText}</h1>
